@@ -1,0 +1,512 @@
+/* ***Root and reset*** */
+:root{
+    --dark-clr: hsl(354, 48%, 43%);
+    --light-clr: hsl(50, 71%, 92%);
+    --main-clr: hsl(166, 21%, 57%);
+    --accent-clr: hsl(43, 55%, 79%); 
+    --fw-500: 500;
+    --fw-400: 400;
+    --fw-300: 300;
+    --x-l: 3rem;
+    --l: 2rem;
+    --m-l: 1.5rem;
+    --m: 1rem;
+    --s-m: 0.75rem;
+    --s: 0.5rem;
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    font-family: 'Anek Latin', sans-serif;
+    overflow-x: hidden;
+    color: var(--dark-clr);
+    line-height: 1;
+    min-height: 100vh;
+    background-color: var(--light-clr);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ***Main classes*** */
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.text-justify{
+    text-align: justify;
+}
+
+.text-upper{
+    text-transform: uppercase;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+.p-1{
+    padding: var(--m);
+}
+.p-2{
+    padding: var(--m-l);
+}
+.p-3{
+    padding: var(--l);
+}
+
+.py-1{
+    padding: var(--m) 0;
+}
+.py-2{
+    padding: var(--m-l) 0;
+}
+.py-3{
+    padding: var(--l) 0;
+}
+
+.m-1{
+    margin: var(--m);
+}
+.m-2{
+    margin: var(--m-l);
+}
+.m-3{
+    margin: var(--l);
+}
+
+.my-1{
+    margin: var(--m) 0;
+}
+.my-2{
+    margin: var(--m-l) 0;
+}
+.my-3{
+    margin: var(--l) 0;
+}
+
+.bg-light{
+    background-color: var(--light-clr);
+}
+.bg-dark{
+    background-color: var(--dark-clr);
+}
+
+.fs-xl{
+    font-size: var(--x-l);
+}
+.fs-l{
+    font-size: var(--l);
+}
+.fs-ml{
+    font-size: var(--m-l);
+}
+.fs-l{
+    font-size: var(--l);
+}
+.fs-sm{
+    font-size: var(--s-m);
+}
+.fs-s{
+    font-size: var(--s);
+}
+
+.tc-light{
+    color: var(--light-clr);
+}
+.tc-dark{
+    color: var(--dark-clr);
+}
+.tc-main{
+    color: var(--main-clr);
+}
+.tc-accent{
+    color: var(--accent-clr);
+}
+
+.fw-500{
+    font-weight: var(--fw-500);
+}
+.fw-400{
+    font-weight: var(--fw-400);
+}
+.fw-300{
+    font-weight: var(--fw-300);
+}
+
+button{
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+input{
+    outline: none;
+    border: none;
+    caret-color: var(--dark-clr);
+}
+
+/* ***Styles*** */
+header h1{
+    letter-spacing: 3px;
+}
+.card{
+    width: min(90vw, 75rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--l);
+    justify-content: center;
+    align-items: center;
+}
+
+.card #query-input{
+    border-bottom: 1px solid var(--dark-clr);
+    width: 100%;
+}
+
+.card #submit-btn{
+    outline: 2px solid var(--dark-clr);
+    outline-offset: -10px;
+    border-radius: 8px;
+    width: max(8rem, 30%);
+    transition: all 300ms ease-in-out;
+    letter-spacing: 1px;
+}
+
+.card #submit-btn:hover{
+    outline: 2px solid var(--light-clr);
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+}
+
+.date-wrapper{
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+    cursor: pointer;
+}
+
+.date-wrapper p{
+    margin: 0.5rem 2rem;
+    line-height: 1.5;
+}
+
+.table-wrapper{
+    overflow-x: auto;
+    min-width: 100%;
+}
+
+.nutrition-table {
+    border-collapse: collapse;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent-clr);
+}
+
+.nutrition-table tr th{
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.nutrition-table td, .nutrition-table th {
+    border: 1px solid var(--light-clr);
+    padding: 8px;
+}
+
+.nutrition-table tr:nth-child(even){
+    background-color: var(--accent-clr);
+}
+
+.nutrition-table tr:hover {
+    background-color: var(--main-clr);
+}
+
+.nutrition-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+}
+
+.nutrition-table tr td:last-child a{
+    position: relative;
+}
+
+.nutrition-table tr td:last-child a::before{
+    position: absolute;
+    content: "Edit";
+    left: 50%;
+    top: -2.65rem;
+    transform: translateX(-50%);
+    background-color: var(--main-clr);
+    color: var(--light-clr);
+    padding: 0.5rem;
+    display: none;
+}
+
+.nutrition-table tr td:last-child a:nth-child(2)::before{
+    content: "Split";
+}
+
+.nutrition-table tr td:last-child a:nth-child(3)::before{
+    content: "Delete";
+}
+
+.nutrition-table tr td:last-child a:hover::before{
+    display: block;
+}
+
+.nutrition-table tr td:last-child a + a{
+    margin-left: 0.25rem;
+}
+
+.nutrition-table tr td:last-child a i{
+    padding: 0.25rem;
+    position: relative;
+}
+
+.nutrition-table tr td:last-child a i:hover{
+    outline: 1px solid var(--dark-clr);
+}
+
+.button-wrapper{
+    align-self: flex-end;
+}
+
+.button-wrapper a{
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--dark-clr);
+    transition: all 300ms ease-in-out;
+}
+
+.button-wrapper a:hover{
+    border-color: var(--accent-clr);
+}
+
+.button-wrapper #submit-all-btn{
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+}
+
+.button-wrapper #submit-all-btn:hover{
+    border-color: inherit;
+    background-color: inherit;
+    color: inherit;
+}
+
+.button-wrapper a + a{
+    margin-left: 1rem;
+}
+
+/* Modal Calender styles starts from here */
+.modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal{
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(354, 48%, 43%, 0.5);
+    color: var(--light-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    position: relative;
+    padding: 1rem;
+}
+
+.modal #close-modal{
+    position: absolute;
+    font-size: 2.5rem;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-clr);
+    color: var(--dark-clr);
+}
+
+.modal #switch{
+    position: absolute;
+    font-size: 1.5rem;
+    background-color: var(--light-clr);
+    outline: 1px solid var(--dark-clr);
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+    padding: 0.75rem 1.5rem;
+    color: var(--dark-clr);
+    transition: all 300ms ease-in-out;
+}
+
+.modal #switch:hover{
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+}
+
+.dpnone{
+    display: none;
+}
+
+#monthly-calendar,
+#yearly-calendar{
+    background-color: var(--dark-clr);
+}
+
+#monthly-calendar .month,
+#yearly-calendar .year{
+    width: 100%;
+    background-color: var(--accent-clr);
+    color: var(--dark-clr);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+#yearly-calendar .year{
+    padding: 0.5rem 2rem;
+}
+
+#monthly-calendar .month i,
+#yearly-calendar .year i{
+    cursor: pointer;
+}
+
+#monthly-calendar .month h1,
+#yearly-calendar .year h1{
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+#monthly-calendar .month p,
+#yearly-calendar .year p{
+    font-size: 1.6rem;
+}
+
+#monthly-calendar .weekdays{
+    width: 100%;
+    display: flex;
+    padding: 0 0.4rem;
+    align-items: flex-end;
+    margin-top: 1.5rem;
+}
+
+#monthly-calendar .weekdays p{
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    width: calc(100% / 7);
+    text-align: center;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+#monthly-calendar .days{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0.4rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#monthly-calendar .days p{
+    font-size: 1.4rem;
+    padding: 1rem 0.7rem;
+    text-align: center;
+    outline: none;
+}
+
+#monthly-calendar .days p:hover:not(.selected-day),
+#yearly-calendar .days p:hover:not(.selected-day){
+    outline: 1px solid var(--light-clr);
+    cursor: pointer;
+}
+
+#monthly-calendar .days .prev-date,
+#monthly-calendar .days .next-date,
+#yearly-calendar .days .prev-date,
+#yearly-calendar .days .next-date{
+    opacity: 0.5;
+}
+
+#monthly-calendar .days .selected-day,
+#yearly-calendar .yearly-calendar-body .days .selected-day{
+    outline: 1px solid var(--light-clr);
+}
+
+.yearly-calendar-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+.yearly-calendar-body .weekdays,
+.yearly-calendar-body .mounth-wrapper{
+    display: grid;
+    grid-template-columns: repeat(38, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.yearly-calendar-body .weekdays p,
+.yearly-calendar-body .days p{
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.yearly-calendar-body .weekdays .place-holder{
+    width: 116px;
+    height: 1px;
+}
+
+#yearly-calendar .days .yearly-view-month{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    width: 100px;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+#yearly-calendar .yearly-calendar-body .days .yearly-view-month:hover{
+    outline: 0;
+    cursor: auto;
+}

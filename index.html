@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b2610d3285.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Nutrition Tracker | Easiest Way to Track Your Calories</title>
+</head>
+<body>
+    <header class="bg-dark py-3 fs-l tc-light fw-500 text-center">
+        <h1 class="text-upper">Nutrition Tracker</h1>
+    </header>
+    <section class="bg-light">
+        <div class="card py-3 text-center">
+            <!-- <label class="fs-ml" for="query-input">Your Query</label> -->
+            <input class="fs-l tc-dark p-1 bg-light text-center" type="text" id="query-input" placeholder="Enter Your Query...">
+            <button class="bg-light tc-dark fw-500 py-1 fs-ml" id="submit-btn">Get Nutrition</button>
+            <div class="date-wrapper">
+                <p><i class="fa-solid fa-calendar-check"></i> <span class="shown-day"></span> - <span class="shown-month" ></span> - <span class="shown-year"></span></p>
+            </div>
+            <div class="table-wrapper">
+                <table class="nutrition-table text-center">
+                    <tr>
+                        <th>Name</th>
+                        <th>Serving Size</th>
+                        <th>Calories</th>
+                        <th>Total Fat</th>
+                        <th>Carbohydrates</th>
+                        <th>Cholesterol</th>
+                        <th>Sodium</th>
+                        <th>Fiber</th>
+                        <th>Sugar</th>
+                        <th>Protein</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr class="sub-tr">
+                        <td><strong>Total</strong></td>
+                        <td><strong class="sub-tr-cell" data-total-serving-size>0</strong> g</td>
+                        <td><strong class="sub-tr-cell" data-total-calories>0</strong></td>
+                        <td><strong class="sub-tr-cell" data-total-total-fat>0</strong> g</td>
+                        <td><strong class="sub-tr-cell" data-total-carbohydrates>0</strong> g</td>
+                        <td><strong class="sub-tr-cell" data-total-cholesterol>0</strong> mg</td>
+                        <td><strong class="sub-tr-cell" data-total-sodium>0</strong> mg</td>
+                        <td><strong class="sub-tr-cell" data-total-fiber>0</strong> g</td>
+                        <td><strong class="sub-tr-cell" data-total-sugar>0</strong> g</td>
+                        <td><strong class="sub-tr-cell" data-total-protein>0</strong> g</td>
+                        <td><strong>---</strong></td>
+                    </tr>
+                    <!-- <tr>
+                        <td>prime rib</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>396.9g</td>
+                        <td>
+                            <a href="#" aria-label="edit"><i class="edit-btn tc-dark fa-solid fa-pen-to-square"></i></a>
+                            <a href="#" aria-label="split"><i class="split-btn tc-dark fa-solid fa-arrows-split-up-and-left"></i></a>
+                            <a href="#" aria-label="delete"><i class="delete-btn tc-dark fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr> -->
+                </table>
+            </div>
+            <div class="button-wrapper">
+                <a id="new-query" href="#">New Query</a>
+                <a id="edit-query" href="#">Edit Query</a>
+                <a id="submit-all-btn" href="#">Looks Good To Me</a>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark py-2 fs-ml tc-light fw-300 text-center">
+        <p>All rights reserved. &copy; 2022</p>
+    </footer>
+    <section class="modal-container dpnone">
+        <div class="modal">
+            <a href="#" id="close-modal">&times;</a>
+            <div class="monthly-calendar-container">
+                <div id="monthly-calendar">
+                    <div class="month">
+                        <i class="fa-solid fa-chevron-left fa-3x prev"></i>
+                        <div class="date">
+                            <h1></h1>
+                            <p></p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right fa-3x next"></i>
+                    </div>
+                    <div class="weekdays">
+                        <p>Sun</p>
+                        <p>Mon</p>
+                        <p>Tue</p>
+                        <p>Wed</p>
+                        <p>Thu</p>
+                        <p>Fri</p>
+                        <p>Sat</p>
+                    </div>
+                    <div class="days"></div>
+                </div>
+            </div>
+            <div class="yearly-calendar-container dpnone">
+                <div id="yearly-calendar">
+                    <div class="year">
+                        <i class="fa-solid fa-chevron-left fa-3x prev"></i>
+                        <div class="date">
+                            <h1>2022</h1>
+                            <p>Fri June 25, 2022</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right fa-3x next"></i>
+                    </div>
+                    <div class="yearly-calendar-body">
+                        <div class="weekdays">
+                            <div class="place-holder"></div>
+                            <p>Sun</p>
+                            <p>Mon</p>
+                            <p>Tue</p>
+                            <p>Wed</p>
+                            <p>Thu</p>
+                            <p>Fri</p>
+                            <p>Sat</p>
+                            <p>Sun</p>
+                            <p>Mon</p>
+                            <p>Tue</p>
+                            <p>Wed</p>
+                            <p>Thu</p>
+                            <p>Fri</p>
+                            <p>Sat</p>
+                            <p>Sun</p>
+                            <p>Mon</p>
+                            <p>Tue</p>
+                            <p>Wed</p>
+                            <p>Thu</p>
+                            <p>Fri</p>
+                            <p>Sat</p>
+                            <p>Sun</p>
+                            <p>Mon</p>
+                            <p>Tue</p>
+                            <p>Wed</p>
+                            <p>Thu</p>
+                            <p>Fri</p>
+                            <p>Sat</p>
+                            <p>Sun</p>
+                            <p>Mon</p>
+                            <p>Tue</p>
+                            <p>Wed</p>
+                            <p>Thu</p>
+                            <p>Fri</p>
+                            <p>Sat</p>
+                            <p>Sun</p>
+                            <p>Mon</p>
+                        </div>
+                        <div class="days">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" id="switch">switch to yearly view</a>
+        </div>
+    </section>
+    <script src="calendar2.js"></script>
+    <script src="ninja.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
